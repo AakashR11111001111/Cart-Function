@@ -1,6 +1,7 @@
 var products = document.querySelectorAll(".prod");
 var qtyContainer = document.querySelector(".qty-container");
 var totalAmt = document.querySelector("#totalamt");
+var msg = document.querySelector(".emptymsg");
 var total = 0;
 
 products.forEach((product) => {
@@ -25,6 +26,7 @@ products.forEach((product) => {
         totalAmt.innerText = `Total Amount: $${total}`;
 
         if (newQuantity > 0) {
+            msg.style.display = "none";
             if (!cartItem) {
                 cartItem = document.createElement("div");
                 cartItem.className = "qtydiv";
@@ -34,6 +36,7 @@ products.forEach((product) => {
                 cartItem.querySelector(".cartQty").innerText = newQuantity;
             }
         } else if (cartItem) {
+            msg.style.display = "block";
             qtyContainer.removeChild(cartItem);
             cartItem = null;
         }
