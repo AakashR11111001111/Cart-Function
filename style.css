@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+}
+
+.main-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-box{
+    animation: fade-in 1s ease;
+    width: 70%;
+    height: 70%;
+    border-radius: 94px 13px 94px 13px;
+    -webkit-border-radius: 94px 13px 94px 13px;
+    -moz-border-radius: 94px 13px 94px 13px;
+    box-shadow: 0px 0px 100px 10px black;
+    background-color: #CAC4B0;
+    display: flex;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.products,.quantity{
+    opacity: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.products{
+    animation: fade-up 1s ease 0.6s forwards;
+}
+
+.quantity{
+    animation: fade-down 1s ease 0.6s  forwards ;
+}
+
+h1{
+    text-align: center;
+}
+
+.prod{
+    width: 90%;
+    margin: 20px auto;
+    font-size: 18px;
+    height: 70px;
+    background-color: #1D334A;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.prodqty{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prodqty button{
+    font-size: 20px;
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.prodqty button:hover{
+    cursor: pointer;
+    background-color:  #332F2C;
+    color: white;
+    font-weight: 600;
+}
+
+
+.qtydiv{
+    display: flex;
+    width: 90%;
+    margin: 20px auto;
+    font-size: 18px;
+    height: 70px;
+    background-color: #1D334A;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.qty-container{
+    height:65%;
+    overflow-y: scroll;
+}
+
+.qty-container::-webkit-scrollbar{
+    width: 10px;
+}
+
+.total{
+    background-color: #F44611;
+    display: flex;
+    width: 90%;
+    margin: 20px auto;
+    height: 70px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+    position: sticky;
+    bottom: 0;
+}
+
+.total > *{
+    font-size: 20px;
+}
+
+
+@keyframes fade-in {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes fade-up {
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fade-down {
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
